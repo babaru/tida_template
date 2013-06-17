@@ -18,7 +18,7 @@ body {
       width: 200px; height: 200px;
       margin: auto; clear: both;
       margin-bottom: 15px;
-      background: image-url('logo_200.png') no-repeat;
+      @include at2x('logo_200', 200px, 200px, '.png');
     }
   }
 

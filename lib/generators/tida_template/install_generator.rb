@@ -4,6 +4,24 @@ module TidaTemplate #:nodoc:
 
       source_root File.expand_path('../templates', __FILE__)
 
+      def modify_some_files
+        # modify application.rb
+        autoload_path_line = 'config.autoload_paths += %W(#{config.root}/extras)'
+        gsub_file 'config/application.rb', /(#{Regexp.escape(autoload_path_line)})/mi do |match|
+          "#{match}\n\tconfig.autoload_paths += %W(\#{config.root}/lib)\n"
+        end
+
+        time_zone_line = "config.time_zone = 'Central Time (US & Canada)'"
+        gsub_file 'config/application.rb', /(#{Regexp.escape(time_zone_line)})/mi do |match|
+          "#{match}\n\tconfig.time_zone = 'Beijing'\n"
+        end
+
+        locale_line = 'config.i18n.default_locale = :de'
+        gsub_file 'config/application.rb', /(#{Regexp.escape(locale_line)})/mi do |match|
+          "#{match}\n\tconfig.i18n.locale = 'zh-CN'\n\tconfig.i18n.default_locale = 'zh-CN'\n"
+        end
+      end
+
       def copy_stuff #:nodoc:
         # copy layouts
         copy_file 'app/views/layouts/single.html.erb', 'app/views/layouts/single.html.erb'
@@ -17,6 +35,9 @@ module TidaTemplate #:nodoc:
         copy_file 'app/views/shared/components/_page_menu.html.erb', 'app/views/shared/components/_page_menu.html.erb'
         copy_file 'app/views/shared/components/_page_title.html.erb', 'app/views/shared/components/_page_title.html.erb'
         copy_file 'app/views/shared/components/_toolbar.html.erb', 'app/views/shared/components/_toolbar.html.erb'
+
+        # copy devise view
+        copy_file 'app/views/devise/sessions/new.html.erb', 'app/views/devise/sessions/new.html.erb'
 
         # copy rails template files
         copy_file 'rails_templates/erb/scaffold/_form.html.erb', 'lib/templates/erb/_form.html.erb'

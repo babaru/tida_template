@@ -1,0 +1,38 @@
+.nav-tabs {
+  background: $navTabBackgroundColor;
+  border: none;
+  border-bottom: 2px solid darken($navTabBackgroundColor, 10%);
+  padding-top: $smallPadding;
+  padding-left: $normalPadding;
+
+  > li {
+    margin-bottom: -2px;
+    padding: 0px;
+
+    &:hover {
+      background: darken($navTabBackgroundColor, 10%);
+    }
+
+    > a {
+      @include border-radius(0);
+      margin: 0px;
+      border: none;
+      color: $navTabForeColor !important;
+      border-bottom: 2px solid darken($navTabBackgroundColor, 10%);
+    }
+
+    > a:hover, > a:focus {
+      background: darken($navTabBackgroundColor, 10%);
+      border: none;
+      border-bottom: 2px solid $logoColor;
+    }
+
+    &.active, &.active:hover, &.active:focus {
+      > a {
+        border: none;
+        border-bottom: 2px solid white;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@mixin no-space {
+  padding: 0px; margin: 0px;
+}
+
+@mixin shadow-box-wrap($backgroundColor) {
+  background: $backgroundColor;
+  padding: 20px;
+  @include border-radius(3px);
+  border: none;
+  border-bottom: 2px solid darken($backgroundColor, 10%);
+}
+
+@mixin caret-up($color: $pageMenuForeColor, $size: 4px) {
+  border-top: none;
+  border-bottom: $size solid $color;
+}
+
+@mixin caret-down($color: $pageMenuForeColor, $size: 4px) {
+  border-bottom: none;
+  border-top: $size solid $color;
+}

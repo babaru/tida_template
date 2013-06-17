@@ -1,0 +1,40 @@
+@import "variables";
+@import 'bootstrap';
+@import 'font-awesome';
+@import 'bootstrap/reset';
+@import 'bootstrap/responsive';
+@import 'bootstrap/mixins';
+@import 'bootstrap-datetimepicker';
+@import 'bootstrap-editable';
+@import 'retina';
+
+html, body {
+  width: 100%; height: 100%;
+  padding: 0px; margin: 0px;
+  position: absolute;
+  font: {
+    size: 12px;
+    family: "Hiragino Sans GB", "Lucida Grande", arial, sans-serif;
+  }
+}
+
+a {
+  text-decoration: none !important;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.dropdown-menu {
+  @include border-radius(0);
+  border: $borderColor solid 1px;
+
+  li:hover > a {
+    text-shadow: none;
+  }
+
+  .active > a, .active > a:hover {
+    color: white;
+  }
+}

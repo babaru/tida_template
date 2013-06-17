@@ -1,0 +1,24 @@
+.grid {
+  @extend .container-fluid;
+  padding: 0px;
+
+  > .grid-row {
+    @extend .row-fluid;
+
+    > [class*="cell"] {
+      @extend [class*="span"];
+    }
+
+    > .cell6 {
+      @extend .span6;
+    }
+
+    > .cell3 {
+      @extend .span3;
+    }
+
+    > .cell2 {
+      @extend .span2;
+    }
+  }
+}

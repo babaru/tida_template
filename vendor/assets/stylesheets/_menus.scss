@@ -1,0 +1,210 @@
+$caret-size: 4px;
+
+@mixin global-menu-item-icon($index) {
+  background-position: -($index * 24px) 0px;
+  &:hover {
+    @include global-menu-item-icon-hover($index);
+  }
+}
+
+@mixin global-menu-item-icon-hover($index) {
+  background-position: -($index * 24px) -24px;
+}
+
+#user-menu-panel {
+  display: block;
+  width: auto; height: 50px;
+  margin: 0px 20px;
+  list-style: none;
+  > li {
+    line-height: 50px;
+    > a {
+      font-size: 11px;
+      color: white;
+      .caret {
+        position: relative;
+        top: 15px;
+        @include caret-down(white);
+      }
+    }
+
+    &.open {
+      .caret {
+        @include caret-up(white);
+      }
+    }
+
+    .dropdown-menu {
+      padding: 0px;
+      > li {
+        @include no-space;
+
+        a {
+          margin: 0px; padding: 5px 20px;
+          // @include block-link;
+
+          &:hover {
+            // @include hover-block-link;
+          }
+        }
+      }
+    }
+  }
+}
+
+#top-navigation-bar {
+  display: block;
+  position: absolute;
+  top: 0px; bottom: 0px;
+  left: 0px; right: 0px;
+  width: 70px;
+  background: $topNavigationBackgroundColor;
+  padding: 0px;
+
+  ul {
+    list-style: none;
+    @include no-space;
+    top: 0px;
+
+    li {
+
+      a {
+        display: block;
+        width: 50px; height: 40px;
+        color: $topNavigationForeColor;
+        font-size: 12px;
+        text-align: center;
+        padding: $bigPadding $normalPadding;
+
+        &.active {
+          background: darken($topNavigationBackgroundColor, 10%);
+          color: lighten($topNavigationForeColor, 40%);
+        }
+
+        &:hover {
+          color: lighten($topNavigationForeColor, 40%);
+        }
+      }
+    }
+  }
+}
+
+@mixin sub-navigation-active-state {
+  background: $pageMenuActiveBackgroundColor;
+  color: $pageMenuActiveForeColor;
+  font-weight: bold;
+}
+
+@mixin sub-navigation-hover-state {
+  background: $pageMenuHoverBackgroundColor;
+  color: $pageMenuHoverForeColor;
+}
+
+#sub-navigation-bar {
+  position: absolute;
+  top: 0px; bottom: 0px;
+  left: 0px; width: 199px;
+  @include no-space;
+  background: $pageMenuBackgroundColor;
+  border-right: 1px solid $pageMenuBorderColor;
+  z-index: 90;
+
+  [class*="accordion"] {
+    @include no-space;
+    border: none;
+    list-style: none;
+  }
+
+  .accordion {
+    ul {
+      list-style: none;
+      @include no-space;
+    }
+
+    a {
+      display: block;
+      line-height: 30px;
+      height: 30px;
+      border-bottom: 1px solid $pageMenuBorderColor;
+      padding: $smallPadding $bigPadding;
+      font: {
+        size: 12px;
+      }
+      color: $pageMenuForeColor;
+
+      &:hover {
+        @include sub-navigation-hover-state;
+
+        .caret {
+          @include caret-down($pageMenuHoverForeColor, $caret-size);
+        }
+
+        &.accordion-toggle.collapsed {
+          .caret {
+            @include caret-up($pageMenuHoverForeColor, $caret-size);
+          }
+        }
+      }
+
+      &.active {
+        @include sub-navigation-active-state;
+
+        &.in {
+          background: $pageMenuBackgroundColor;
+          color: $pageMenuForeColor;
+
+          &:hover {
+            background: $pageMenuHoverBackgroundColor;
+            color: $pageMenuHoverForeColor;
+
+            .caret {
+              @include caret-down($pageMenuHoverForeColor, $caret-size);
+            }
+
+            &.accordion-toggle.collapsed {
+              .caret {
+                @include caret-up($pageMenuHoverForeColor, $caret-size);
+              }
+            }
+          }
+        }
+
+        .caret {
+          @include caret-down;
+        }
+
+        &.accordion-toggle.collapsed {
+          .caret {
+            @include caret-up;
+          }
+        }
+      }
+
+      .caret {
+        position: relative;
+        top: $normalPadding;
+        @include caret-down;
+      }
+
+      &.accordion-toggle.collapsed {
+        .caret {
+          @include caret-up;
+        }
+      }
+    }
+  }
+
+  .accordion-body {
+    a {
+      padding: 0px $bigPadding * 2;
+      height: 35px;
+      line-height: 35px;
+
+      &.active {
+        background: $pageMenuActiveBackgroundColor;
+        color: $pageMenuActiveForeColor;
+        font-weight: bold;
+      }
+    }
+  }
+}

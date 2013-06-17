@@ -1,0 +1,134 @@
+// @import 'components';
+// @import 'menus';
+// @import 'titles';
+// @import 'breadcrumbs';
+// @import 'icons';
+// @import 'brands_list';
+
+@import 'base';
+@import 'mixins';
+
+html, body {
+  color: #383839;
+}
+
+#main-container {
+  > header {
+    display: block; position: absolute;
+    top: 0; left: 0px;
+    height: 50px; width: 100%;
+    background: $logoColor;
+    z-index: 1000;
+    color: white;
+    #logo {
+      width: 120px; height: 50px;
+      background: image-url('logo.png') no-repeat left top;
+    }
+  }
+
+  > #main-content {
+    display: block; position: absolute;
+    top: 50px; bottom: 0px;
+    left: 0px; right: 0px;
+    z-index: 1;
+
+    #main {
+      position: absolute;
+      top: 0px; bottom: 0px;
+      left: 70px; right: 0px;
+
+      > .content {
+        position: absolute;
+        top: 0px; bottom: 0px;
+        left: 200px; right: 0px;
+        z-index: 2;
+        overflow: auto;
+      }
+    }
+  }
+
+  > footer {
+    display: block;
+    position: absolute;
+    left: 270px; bottom: 0;
+    width: 100%; height: 30px;
+    line-height: 30px;
+    border-top: 1px solid $pageMenuBorderColor;
+    color: $gray;
+    padding: 0px $normalPadding;
+
+    .copyright {
+      font-size: 11px;
+      font-weight: normal;
+    }
+  }
+}
+
+@import 'grids';
+@import 'menus';
+@import 'titles';
+@import 'tables';
+@import 'buttons';
+@import 'navs';
+@import 'labels';
+@import 'forms';
+@import 'modals';
+@import 'notifications';
+
+article .padding {
+  padding: $normalPadding $bigPadding;
+  padding-bottom: 0px;
+}
+
+// .group.cell {
+//   background: $borderColor !important;
+//   font-weight: bold;
+//   font-size: 14px !important;
+//   padding: 7px;
+//   text-align: center;
+// }
+
+.bootstrap-datetimepicker-widget {
+  z-index: 1060;
+}
+
+.modal {
+  form {
+    margin: 0px;
+    .control-group:last-child {
+      margin-bottom: 0px;
+    }
+  }
+}
+
+.char_count_alert {
+  margin-left: 20px;
+
+}
+
+.navigative_calendar {
+  ul {
+    list-style: none;
+    padding: 0; margin: 0px;
+    margin-left: 15px;
+
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        width: 30px; height: 30px;
+        background: $smokeGray;
+        line-height: 30px;
+        text-align: center;
+
+        &.fat {
+          background: darken($borderColor, 20%);
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@import 'brands_list';

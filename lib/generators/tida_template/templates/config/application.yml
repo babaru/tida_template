@@ -1,0 +1,13 @@
+defaults: &defaults
+  app:
+    name: 'tida'
+    copy_right: ''
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

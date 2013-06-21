@@ -15,10 +15,10 @@ body {
     padding-top: 150px;
 
     #logo {
-      width: 200px; height: 200px;
+      width: 250px; height: 200px;
       margin: auto; clear: both;
       margin-bottom: 15px;
-      @include at2x('logo_200', 200px, 200px, '.png');
+      @include at2x('logo_250', 250px, 150px, '.png');
     }
   }
 

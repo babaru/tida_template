@@ -1,5 +1,5 @@
-# source "http://rubygems.org"
-source 'http://ruby.taobao.org/'
+source "http://rubygems.org"
+# source 'http://ruby.taobao.org/'
 
 # Declare your gem's dependencies in tida_template.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and

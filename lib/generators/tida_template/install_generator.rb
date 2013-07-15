@@ -40,11 +40,11 @@ module TidaTemplate #:nodoc:
         copy_file 'app/views/devise/sessions/new.html.erb', 'app/views/devise/sessions/new.html.erb'
 
         # copy rails template files
-        copy_file 'rails_templates/erb/scaffold/_form.html.erb', 'lib/templates/erb/_form.html.erb'
-        copy_file 'rails_templates/erb/scaffold/index.html.erb', 'lib/templates/erb/index.html.erb'
-        copy_file 'rails_templates/erb/scaffold/new.html.erb', 'lib/templates/erb/new.html.erb'
-        copy_file 'rails_templates/erb/scaffold/edit.html.erb', 'lib/templates/erb/edit.html.erb'
-        copy_file 'rails_templates/erb/scaffold/show.html.erb', 'lib/templates/erb/show.html.erb'
+        copy_file 'rails_templates/erb/scaffold/_form.html.erb', 'lib/templates/erb/scaffold/_form.html.erb'
+        copy_file 'rails_templates/erb/scaffold/index.html.erb', 'lib/templates/erb/scaffold/index.html.erb'
+        copy_file 'rails_templates/erb/scaffold/new.html.erb', 'lib/templates/erb/scaffold/new.html.erb'
+        copy_file 'rails_templates/erb/scaffold/edit.html.erb', 'lib/templates/erb/scaffold/edit.html.erb'
+        copy_file 'rails_templates/erb/scaffold/show.html.erb', 'lib/templates/erb/scaffold/show.html.erb'
         copy_file 'rails_templates/rails/scaffold_controller/controller.rb', 'lib/templates/rails/scaffold_controller/controller.rb'
 
         # copy renders

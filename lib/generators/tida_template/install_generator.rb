@@ -22,6 +22,14 @@ module TidaTemplate #:nodoc:
         end
       end
 
+      def run_other_generators
+        generate 'devise:install'
+        generate 'devise user'
+        generate 'simple_form:install --bootstrap'
+        generate 'wice_grid:install'
+        generate 'navigation_config'
+      end
+
       def copy_stuff #:nodoc:
         # copy layouts
         copy_file 'app/views/layouts/single.html.erb', 'app/views/layouts/single.html.erb'
@@ -36,20 +44,10 @@ module TidaTemplate #:nodoc:
         copy_file 'app/views/shared/components/_page_title.html.erb', 'app/views/shared/components/_page_title.html.erb'
         copy_file 'app/views/shared/components/_toolbar.html.erb', 'app/views/shared/components/_toolbar.html.erb'
 
-        # copy devise view
-        copy_file 'app/views/devise/sessions/new.html.erb', 'app/views/devise/sessions/new.html.erb'
-
-        # copy rails template files
-        copy_file 'rails_templates/erb/scaffold/_form.html.erb', 'lib/templates/erb/scaffold/_form.html.erb'
-        copy_file 'rails_templates/erb/scaffold/index.html.erb', 'lib/templates/erb/scaffold/index.html.erb'
-        copy_file 'rails_templates/erb/scaffold/new.html.erb', 'lib/templates/erb/scaffold/new.html.erb'
-        copy_file 'rails_templates/erb/scaffold/edit.html.erb', 'lib/templates/erb/scaffold/edit.html.erb'
-        copy_file 'rails_templates/erb/scaffold/show.html.erb', 'lib/templates/erb/scaffold/show.html.erb'
-        copy_file 'rails_templates/rails/scaffold_controller/controller.rb', 'lib/templates/rails/scaffold_controller/controller.rb'
-
         # copy renders
         copy_file 'renderers/sub_navigation_bar_renderer.rb', 'lib/tida/renderers/sub_navigation_bar_renderer.rb'
         copy_file 'renderers/top_navigation_bar_renderer.rb', 'lib/tida/renderers/top_navigation_bar_renderer.rb'
+        copy_file 'renderers/component_renderer.rb', 'lib/tida/renderers/component_renderer.rb'
 
         # copy paperclip attachment access token
         copy_file 'paperclip/attachment_access_token.rb', 'lib/tida/paperclip/attachment_access_token.rb'
@@ -66,16 +64,18 @@ module TidaTemplate #:nodoc:
         #copy other configurations
         copy_file 'config/application.yml', 'config/application.yml'
         copy_file 'settingslogic/settings.rb', 'lib/settings.rb'
-      end
 
-      def run_other_generators
-        generate 'devise:install'
-        generate 'devise user'
-        generate 'simple_form:install --bootstrap'
-        generate 'wice_grid:install'
-        generate 'navigation_config'
-      end
+        # copy devise view
+        copy_file 'app/views/devise/sessions/new.html.erb', 'app/views/devise/sessions/new.html.erb'
 
+        # copy rails template files
+        copy_file 'rails_templates/erb/scaffold/_form.html.erb', 'lib/templates/erb/scaffold/_form.html.erb'
+        copy_file 'rails_templates/erb/scaffold/index.html.erb', 'lib/templates/erb/scaffold/index.html.erb'
+        copy_file 'rails_templates/erb/scaffold/new.html.erb', 'lib/templates/erb/scaffold/new.html.erb'
+        copy_file 'rails_templates/erb/scaffold/edit.html.erb', 'lib/templates/erb/scaffold/edit.html.erb'
+        copy_file 'rails_templates/erb/scaffold/show.html.erb', 'lib/templates/erb/scaffold/show.html.erb'
+        copy_file 'rails_templates/rails/scaffold_controller/controller.rb', 'lib/templates/rails/scaffold_controller/controller.rb'
+      end
     end
   end
 end

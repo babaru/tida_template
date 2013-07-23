@@ -7,8 +7,8 @@
   text-shadow: none;
   background: $btnBackground;
   @include box-shadow(none);
-  border: none;
-  border-bottom: 2px solid darken($btnBackground, 10%);
+  border: 1px solid darken($btnBackground, 5%);
+  border-bottom: 4px solid darken($btnBackground, 10%);
   outline: none !important;
 
   &.disabled,
@@ -37,7 +37,8 @@
   @include box-shadow(none);
   background: $backgroundColor;
   color: $foreColor;
-  border-bottom-color: darken($backgroundColor, 10%);
+  border: 1px solid darken($backgroundColor, 5%);
+  border-bottom: 3px solid darken($backgroundColor, 10%);
   &:hover, &:active {
     background: darken($backgroundColor, 10%);
   }

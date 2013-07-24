@@ -54,3 +54,8 @@ input[type="color"],
 .input-prepend .add-on {
   border-right: none;
 }
+
+form.navbar-search {
+  border: none !important;
+  margin: 0px; padding: 0px;
+}

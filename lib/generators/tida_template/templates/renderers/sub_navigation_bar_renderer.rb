@@ -15,8 +15,6 @@ module Tida
         end
         menu_content = content_tag(:ul, list_content.join, {class: 'accordion'})
         div_content = []
-        # div_content << header_content
-        # div_content << menu_content
         content_tag(:div, menu_content, {id: 'sub-navigation-bar'})
       end
 

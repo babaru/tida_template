@@ -22,6 +22,10 @@ form {
   }
 }
 
+form.no-padding {
+  margin: 0px; padding: 0px;
+}
+
 select,
 textarea,
 input[type="text"],

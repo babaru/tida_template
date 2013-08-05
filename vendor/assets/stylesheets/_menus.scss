@@ -83,6 +83,7 @@ $caret-size: 4px;
 
         &:hover {
           color: lighten($topNavigationForeColor, 40%);
+          text-decoration: none !important;
         }
       }
     }
@@ -98,6 +99,7 @@ $caret-size: 4px;
 @mixin sub-navigation-hover-state {
   background: $pageMenuHoverBackgroundColor;
   color: $pageMenuHoverForeColor;
+  text-decoration: none !important;
 }
 
 #sub-navigation-bar {

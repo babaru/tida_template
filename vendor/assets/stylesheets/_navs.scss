@@ -25,6 +25,7 @@
       background: darken($navTabBackgroundColor, 10%);
       border: none;
       border-bottom: 2px solid $logoColor;
+      text-decoration: none !important;
     }
 
     &.active, &.active:hover, &.active:focus {

@@ -76,8 +76,9 @@ html, body {
 @import 'notifications';
 
 article .padding {
-  padding: $normalPadding $bigPadding;
-  padding-bottom: 0px;
+  padding: 0px $bigPadding;
+  padding-bottom: $normalPadding;
+  margin: 0px;
 }
 
 // .group.cell {
@@ -132,3 +133,9 @@ article .padding {
 }
 
 @import 'brands_list';
+
+.wice-grid-container {
+  table {
+    margin-bottom: 0px;
+  }
+}

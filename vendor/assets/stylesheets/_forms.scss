@@ -26,6 +26,10 @@ form.no-padding {
   margin: 0px; padding: 0px;
 }
 
+form.no-border {
+  border: none;
+}
+
 select,
 textarea,
 input[type="text"],

@@ -4,6 +4,7 @@
   border-bottom: 2px solid darken($navTabBackgroundColor, 10%);
   padding-top: $smallPadding;
   padding-left: $normalPadding;
+  margin-bottom: $normalPadding !important;
 
   > li {
     margin-bottom: -2px;

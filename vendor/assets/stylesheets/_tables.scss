@@ -39,9 +39,9 @@
     &.buttons {
       width: 29px; height: 28px;
       padding: 0px;
-      > .button {
+      > .icon.button {
         width: 31px; height: 31px;
-        padding: 0px;
+        padding: 0px !important;
       }
     }
 

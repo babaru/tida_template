@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tida_template (0.2.5)
+    tida_template (0.2.6)
       bootstrap-datetimepicker-rails
       bootstrap-sass
       bootstrap-x-editable-rails

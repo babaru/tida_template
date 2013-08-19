@@ -31,6 +31,13 @@
   }
 }
 
+.button-large {
+  @extend .btn-large;
+  font-size: 18px !important;
+  padding: 11px 19px !important;
+  @include border-radius(4px);
+}
+
 @mixin extend-button($backgroundColor, $foreColor: white) {
   @content;
   @include box-shadow(none);

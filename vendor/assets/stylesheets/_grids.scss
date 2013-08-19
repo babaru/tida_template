@@ -1,6 +1,7 @@
 .grid {
   @extend .container-fluid;
   padding: 0px;
+  padding-bottom: 10px;
 
   > .grid-row {
     @extend .row-fluid;

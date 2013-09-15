@@ -95,6 +95,10 @@ $caret-size: 4px;
   }
 
   .accordion .accordion {
+    background: darken($topNavigationBackgroundColor, 10%);
+  }
+
+  .accordion-body {
     background: darken($topNavigationBackgroundColor, 5%);
   }
 

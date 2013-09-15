@@ -9,7 +9,6 @@ $(document).ready(function() {
   $("a[rel=tooltip]").tooltip();
 
   $('.dropdown-toggle').dropdown();
-
   $('.date-time-picker').datetimepicker({
     format: 'yyyy-MM-dd hh:mm:ss'
   });
@@ -18,4 +17,18 @@ $(document).ready(function() {
     format: 'yyyy-MM-dd',
     pickTime: false
   });
+
+  $(".collapse").collapse({
+    toggle: false
+  });
+
+  $('.accordion-toggle').click(function() {
+    if (!$(this).hasClass('open')) {
+      $(this).addClass('open');
+      $('.icon-angle-left', this).removeClass('icon-angle-left').addClass('icon-angle-down');
+    } else {
+      $(this).removeClass('open');
+      $('.icon-angle-down', this).removeClass('icon-angle-down').addClass('icon-angle-left');
+    }
+  })
 });

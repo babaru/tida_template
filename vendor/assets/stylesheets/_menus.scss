@@ -52,14 +52,57 @@ $caret-size: 4px;
   }
 }
 
+@mixin navigation-item {
+  display: block;
+  width: 160px; height: 29px;
+  padding: 5px 10px;
+  color: $topNavigationForeColor;
+  font-size: 12px;
+  line-height: 30px;
+  border-bottom: 1px solid darken($topNavigationBackgroundColor, 15%);
+
+  &:hover, &.active {
+    background: darken($logoColor, 15%);
+    color: white;
+    text-decoration: none !important;
+  }
+
+  &.open {
+    color: white;
+  }
+}
+
 #top-navigation-bar {
   display: block;
   position: absolute;
   top: 0px; bottom: 0px;
   left: 0px; right: 0px;
-  width: 70px;
+  width: 180px;
   background: $topNavigationBackgroundColor;
   padding: 0px;
+
+  [class*="accordion"] {
+    padding: 0px; margin: 0px;
+    border: none;
+    color: $topNavigationForeColor;
+    font-size: 12px;
+  }
+
+  .accordion-heading {
+    a {
+      @include navigation-item;
+    }
+  }
+
+  .accordion .accordion {
+    background: darken($topNavigationBackgroundColor, 5%);
+  }
+
+  .arrow {
+    position: absolute;
+    right: 10px;
+    line-height: 30px;
+  }
 
   ul {
     list-style: none;
@@ -67,24 +110,8 @@ $caret-size: 4px;
     top: 0px;
 
     li {
-
       a {
-        display: block;
-        width: 50px; height: 40px;
-        color: $topNavigationForeColor;
-        font-size: 12px;
-        text-align: center;
-        padding: $bigPadding $normalPadding;
-
-        &.active {
-          background: darken($topNavigationBackgroundColor, 10%);
-          color: lighten($topNavigationForeColor, 40%);
-        }
-
-        &:hover {
-          color: lighten($topNavigationForeColor, 40%);
-          text-decoration: none !important;
-        }
+        @include navigation-item;
       }
     }
   }
@@ -103,6 +130,7 @@ $caret-size: 4px;
 }
 
 #sub-navigation-bar {
+  display: none;
   position: absolute;
   top: 0px; bottom: 0px;
   left: 0px; width: 199px;

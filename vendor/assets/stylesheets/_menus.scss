@@ -94,12 +94,24 @@ $caret-size: 4px;
     }
   }
 
-  .accordion .accordion {
+  .accordion .accordion .accordion-body {
     background: darken($topNavigationBackgroundColor, 10%);
   }
 
   .accordion-body {
     background: darken($topNavigationBackgroundColor, 5%);
+  }
+
+  .accordion .accordion .accordion-heading, .accordion .accordion-inner {
+    a {
+      padding-left: 15px;
+    }
+  }
+
+  .accordion .accordion .accordion-inner {
+    a {
+      padding-left: 30px;
+    }
   }
 
   .arrow {
@@ -116,128 +128,6 @@ $caret-size: 4px;
     li {
       a {
         @include navigation-item;
-      }
-    }
-  }
-}
-
-@mixin sub-navigation-active-state {
-  background: $pageMenuActiveBackgroundColor;
-  color: $pageMenuActiveForeColor;
-  font-weight: bold;
-}
-
-@mixin sub-navigation-hover-state {
-  background: $pageMenuHoverBackgroundColor;
-  color: $pageMenuHoverForeColor;
-  text-decoration: none !important;
-}
-
-#sub-navigation-bar {
-  display: none;
-  position: absolute;
-  top: 0px; bottom: 0px;
-  left: 0px; width: 199px;
-  @include no-space;
-  background: $pageMenuBackgroundColor;
-  border-right: 1px solid $pageMenuBorderColor;
-  z-index: 90;
-
-  [class*="accordion"] {
-    @include no-space;
-    border: none;
-    list-style: none;
-  }
-
-  .accordion {
-    ul {
-      list-style: none;
-      @include no-space;
-    }
-
-    a {
-      display: block;
-      line-height: 30px;
-      height: 30px;
-      border-bottom: 1px solid $pageMenuBorderColor;
-      padding: $smallPadding $bigPadding;
-      font: {
-        size: 12px;
-      }
-      color: $pageMenuForeColor;
-
-      &:hover {
-        @include sub-navigation-hover-state;
-
-        .caret {
-          @include caret-down($pageMenuHoverForeColor, $caret-size);
-        }
-
-        &.accordion-toggle.collapsed {
-          .caret {
-            @include caret-up($pageMenuHoverForeColor, $caret-size);
-          }
-        }
-      }
-
-      &.active {
-        @include sub-navigation-active-state;
-
-        &.in {
-          background: $pageMenuBackgroundColor;
-          color: $pageMenuForeColor;
-
-          &:hover {
-            background: $pageMenuHoverBackgroundColor;
-            color: $pageMenuHoverForeColor;
-
-            .caret {
-              @include caret-down($pageMenuHoverForeColor, $caret-size);
-            }
-
-            &.accordion-toggle.collapsed {
-              .caret {
-                @include caret-up($pageMenuHoverForeColor, $caret-size);
-              }
-            }
-          }
-        }
-
-        .caret {
-          @include caret-down;
-        }
-
-        &.accordion-toggle.collapsed {
-          .caret {
-            @include caret-up;
-          }
-        }
-      }
-
-      .caret {
-        position: relative;
-        top: $normalPadding;
-        @include caret-down;
-      }
-
-      &.accordion-toggle.collapsed {
-        .caret {
-          @include caret-up;
-        }
-      }
-    }
-  }
-
-  .accordion-body {
-    a {
-      padding: 0px $bigPadding * 2;
-      height: 35px;
-      line-height: 35px;
-
-      &.active {
-        background: $pageMenuActiveBackgroundColor;
-        color: $pageMenuActiveForeColor;
-        font-weight: bold;
       }
     }
   }

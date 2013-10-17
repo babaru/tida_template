@@ -45,8 +45,7 @@ module TidaTemplate #:nodoc:
         copy_file 'app/views/shared/components/_toolbar.html.erb', 'app/views/shared/components/_toolbar.html.erb'
 
         # copy renders
-        copy_file 'renderers/sub_navigation_bar_renderer.rb', 'lib/tida/renderers/sub_navigation_bar_renderer.rb'
-        copy_file 'renderers/top_navigation_bar_renderer.rb', 'lib/tida/renderers/top_navigation_bar_renderer.rb'
+        copy_file 'renderers/navigation_bar_renderer.rb', 'lib/tida/renderers/navigation_bar_renderer.rb'
         copy_file 'renderers/component_renderer.rb', 'lib/tida/renderers/component_renderer.rb'
 
         # copy paperclip attachment access token

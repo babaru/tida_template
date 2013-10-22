@@ -29,6 +29,7 @@ a {
 .dropdown-menu {
   @include border-radius(0);
   border: $borderColor solid 1px;
+  font-size: 12px !important;
 
   li:hover > a {
     text-shadow: none;
@@ -48,4 +49,9 @@ a {
 
 ul, ol {
   margin: 0px; padding: 0px;
+}
+
+.panel {
+  padding: $normalPadding;
+  background: $navTabBackgroundColor;
 }

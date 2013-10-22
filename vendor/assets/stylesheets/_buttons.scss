@@ -1,8 +1,8 @@
 .button {
   @extend .btn;
   font-size: 12px !important;
-  height: 31px;
-  line-height: 34px;
+  height: 27px;
+  line-height: 30px;
   padding: 0px 15px !important;
   text-shadow: none;
   background: $btnBackground;
@@ -52,6 +52,10 @@
   }
 }
 
+.button-group {
+  @extend .btn-group;
+}
+
 .button-logo {
   @include extend-button($logoColor) { @extend .btn-primary; }
 }
@@ -82,8 +86,8 @@
 
 input[type="submit"] {
   &.button, &.button-warning {
-    height: 36px !important;
-    line-height: 34px;
+    height: 32px !important;
+    line-height: 30px;
 
     &:hover, &:active {
       text-decoration: none !important;
